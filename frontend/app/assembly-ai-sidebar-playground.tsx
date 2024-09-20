@@ -53,20 +53,7 @@ export default function AudioTranscribePlayground() {
                 </div>
               </div>
 
-              <div>
-                <Label htmlFor="language" className="text-gray-200">Language</Label>
-                <Select>
-                  <SelectTrigger className="bg-input-background border border-highlight rounded-lg">
-                    <SelectValue placeholder="Automatic Language Detection" />
-                  </SelectTrigger>
-                  <SelectContent style={{ backgroundColor: 'black' }} className="border border-highlight rounded-lg">
-                    <SelectItem value="auto">Automatic Language Detection</SelectItem>
-                    <SelectItem value="en">English</SelectItem>
-                    <SelectItem value="es">Spanish</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
+              
               <div>
                 <Label className="text-gray-200">Model Tier</Label>
                 <RadioGroup defaultValue="best" className="flex space-x-4">

@@ -25,9 +25,9 @@ export default function AudioTranscribePlayground() {
         <Card className="w-full md:w-80 shrink-0 bg-card-background text-gray-200">
           <CardContent className="p-4">
             <Tabs defaultValue="audio-file" className="mb-6">
-              <TabsList className="grid w-full grid-cols-2 bg-input-background border border-highlight rounded-lg overflow-hidden">
-                <TabsTrigger value="audio-file" className="data-[state=active]:bg-highlight data-[state=active]:text-white border-r border-highlight">Audio File</TabsTrigger>
-                <TabsTrigger value="streaming" className="data-[state=active]:bg-highlight data-[state=active]:text-white">Streaming</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 bg-input-background border border-purple-600 rounded-lg overflow-hidden">
+                <TabsTrigger value="audio-file" className="data-[state=active]:bg-gradient-to-r from-pink-500 to-purple-600 data-[state=active]:text-white border-r border-purple-600">Audio File</TabsTrigger>
+                <TabsTrigger value="streaming" className="data-[state=active]:bg-gradient-to-r from-pink-500 to-purple-600 data-[state=active]:text-white">Streaming</TabsTrigger>
               </TabsList>
               <TabsContent value="audio-file">
                 <div className="space-y-6">
@@ -42,7 +42,7 @@ export default function AudioTranscribePlayground() {
                       />
                       <label
                         htmlFor="audio-file"
-                        className="cursor-pointer bg-input-background border border-highlight text-gray-200 rounded-lg px-4 py-2 inline-block hover:bg-opacity-80 transition-all duration-300"
+                        className="cursor-pointer bg-input-background border border-purple-600 text-gray-200 rounded-lg px-4 py-2 inline-block hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white transition-all duration-300"
                       >
                         Choose File
                       </label>
@@ -87,7 +87,7 @@ export default function AudioTranscribePlayground() {
                     <input
                       type="text"
                       id="streaming-url"
-                      className="w-full mt-2 bg-input-background border border-highlight text-gray-200 rounded-lg px-4 py-2"
+                      className="w-full mt-2 bg-input-background border border-purple-600 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="https://example.com/stream"
                     />
                   </div>

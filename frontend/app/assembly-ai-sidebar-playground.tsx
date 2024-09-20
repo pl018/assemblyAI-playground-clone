@@ -70,7 +70,7 @@ export default function AudioTranscribePlayground() {
                         <Label htmlFor={`${capability}-audio`} className="text-sm text-gray-300">{capability}</Label>
                         <Switch 
                           id={`${capability}-audio`} 
-                          className="border border-purple-600 bg-transparent data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600"
+                          className="border border-purple-600 bg-transparent data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 data-[state=unchecked]:bg-transparent"
                         />
                       </div>
                     ))}
@@ -114,7 +114,10 @@ export default function AudioTranscribePlayground() {
                     ].map((capability) => (
                       <div key={capability} className="flex items-center justify-between">
                         <Label htmlFor={`${capability}-streaming`} className="text-sm text-gray-300">{capability}</Label>
-                        <Switch id={`${capability}-streaming`} className="bg-input-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600" />
+                        <Switch 
+                          id={`${capability}-streaming`} 
+                          className="border border-purple-600 bg-transparent data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 data-[state=unchecked]:bg-transparent"
+                        />
                       </div>
                     ))}
                   </div>

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -11,10 +10,8 @@ export default function AudioTranscribePlayground() {
     <div className="container mx-auto p-4 text-gray-200">
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center space-x-4">
-          <svg className="w-8 h-8 text-highlight" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span className="text-2xl font-bold">AssemblyAI</span>
+
+          <span className="text-2xl font-bold">AssyAI</span>
           <span className="text-gray-300">Playground</span>
         </div>
         <div className="space-x-4">
@@ -56,28 +53,27 @@ export default function AudioTranscribePlayground() {
               
               <div>
                 <Label className="text-gray-200">Model Tier</Label>
-                <RadioGroup defaultValue="best" className="flex space-x-4">
+                <RadioGroup defaultValue="best" className="flex space-x-6">
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="best" id="best" className="border-highlight text-highlight" />
-                    <Label htmlFor="best" className="text-gray-200">Best</Label>
+                    <Label htmlFor="best" className="text-gray-300">Best</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="nano" id="nano" className="border-highlight text-highlight" />
-                    <Label htmlFor="nano" className="text-gray-200">Nano</Label>
+                    <Label htmlFor="nano" className="text-gray-300">Nano</Label>
                   </div>
                 </RadioGroup>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <Label className="text-gray-200">Select additional capabilities (optional)</Label>
                 {[
                   "LeMUR", "Summarization", "Topic Detection", "Auto Chapters",
                   "Content Moderation", "Important Phrases", "Sentiment Analysis",
-                  "Entity Detection", "PII Redaction", "Speaker Labels",
-                  "Dual Channel", "Profanity Filtering"
+                  "Entity Detection", "PII Redaction", "Speaker Labels"
                 ].map((capability) => (
                   <div key={capability} className="flex items-center justify-between">
-                    <Label htmlFor={capability} className="text-sm text-gray-200">{capability}</Label>
+                    <Label htmlFor={capability} className="text-sm text-gray-300">{capability}</Label>
                     <Switch id={capability} className="bg-input-background data-[state=checked]:bg-highlight" />
                   </div>
                 ))}

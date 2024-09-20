@@ -8,12 +8,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 export default function AudioTranscribePlayground() {
   return (
     <div className="container mx-auto p-4 text-gray-200">
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex items-center space-x-4">
+      <div className="flex justify-end items-center mb-6">
 
-          <span className="text-2xl font-bold">AssyAI</span>
-          <span className="text-gray-300">Playground</span>
-        </div>
         <div className="space-x-4">
           <Button variant="ghost" className="text-gray-200 hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white">API Docs</Button>
           <Button variant="ghost" className="text-gray-200 hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white">Contact sales</Button>
@@ -72,7 +68,10 @@ export default function AudioTranscribePlayground() {
                     ].map((capability) => (
                       <div key={capability} className="flex items-center justify-between">
                         <Label htmlFor={`${capability}-audio`} className="text-sm text-gray-300">{capability}</Label>
-                        <Switch id={`${capability}-audio`} className="bg-input-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600" />
+                        <Switch 
+                          id={`${capability}-audio`} 
+                          className="border border-purple-600 bg-transparent data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600"
+                        />
                       </div>
                     ))}
                   </div>
@@ -96,7 +95,7 @@ export default function AudioTranscribePlayground() {
                     <Label className="text-gray-200">Model Tier</Label>
                     <RadioGroup defaultValue="best" className="flex space-x-6">
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="best" id="best-streaming" className="border-0 ring-2 ring-pink-500 ring-offset-2 ring-offset-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 outline outline-2 outline-gray-300" />
+                        <RadioGroupItem value="best" id="best-streaming" className="border-1 ring-2 ring-pink-500 ring-offset-2 ring-offset-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 outline outline-2 outline-gray-300" />
                         <Label htmlFor="best-streaming" className="text-gray-300">Best</Label>
                       </div>
                       <div className="flex items-center space-x-2">

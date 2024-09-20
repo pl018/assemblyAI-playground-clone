@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Transcription</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showProcessing() {
+            document.getElementById('uploadForm').classList.add('hidden');
+            document.getElementById('processing').classList.remove('hidden');
+            document.getElementById('transcriptionResult').classList.add('hidden');
+            document.getElementById('errorMessage').classList.add('hidden');
+        }
+
+        // Clear transcription on page load
+        window.onload = function() {
+            // Use a custom flag to check if this is a fresh page load
+            if (!sessionStorage.getItem('formSubmitted')) {
+                document.getElementById('transcriptionResult').classList.add('hidden');
+                document.getElementById('errorMessage').classList.add('hidden');
+            }
+            sessionStorage.removeItem('formSubmitted');
+        }
+
+        // Set flag when form is submitted
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('uploadForm').addEventListener('submit', function() {
+                sessionStorage.setItem('formSubmitted', 'true');
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-screen-xl">
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Audio Transcription</h1>
+        
+        <div class="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
+            <!-- Transcription Result -->
+            <div id="transcriptionResult" class="w-full md:w-3/4 order-2 md:order-1 {% if not transcription %}hidden{% endif %}">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Transcription Result:</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-800 whitespace-pre-wrap">{{ transcription or '' }}</p>
+                </div>
+            </div>
+
+            <!-- Audio Upload Card -->
+            <div class="w-full md:w-1/4 order-1 md:order-2">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <form id="uploadForm" action="/upload-audio" method="post" enctype="multipart/form-data" class="space-y-4" onsubmit="showProcessing()">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="file" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg class="w-8 h-8 mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                    <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span></p>
+                                    <p class="text-xs text-gray-500">MP3, WAV, or M4A</p>
+                                </div>
+                                <input id="file" name="file" type="file" class="hidden" accept="audio/*" />
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                            Transcribe
+                        </button>
+                    </form>
+
+                    <div id="processing" class="hidden space-y-4 mt-4">
+                        <div class="flex items-center justify-center">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                        </div>
+                        <p class="text-center text-sm text-gray-600">Processing audio...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="mt-8 w-full {% if not error %}hidden{% endif %}">
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg shadow-md" role="alert">
+                <p class="font-bold">Error</p>
+                <p>{{ error or '' }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -49,11 +49,11 @@ export default function AudioTranscribePlayground() {
                     <Label className="text-gray-200">Model Tier</Label>
                     <RadioGroup defaultValue="best" className="flex space-x-6">
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="best" id="best-audio" className="border-0 ring-2 ring-pink-500 ring-offset-2 ring-offset-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 outline outline-2 outline-gray-300" />
+                        <RadioGroupItem value="best" id="best-audio" className="border-0 ring-2 ring-pink-500 ring-offset-2 ring-offset-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 outline outline-2 outline-purple-600" />
                         <Label htmlFor="best-audio" className="text-gray-300">Best</Label>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="nano" id="nano-audio" className="border-0 ring-2 ring-pink-500 ring-offset-2 ring-offset-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 outline outline-2 outline-gray-300" />
+                        <RadioGroupItem value="nano" id="nano-audio" className="border-0 ring-2 ring-pink-500 ring-offset-2 ring-offset-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600 outline outline-2 outline-purple-600" />
                         <Label htmlFor="nano-audio" className="text-gray-300">Nano</Label>
                       </div>
                     </RadioGroup>

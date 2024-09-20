@@ -1,0 +1,40 @@
+
+# v  Process and Translate the Audio File
+
+✍🏼 Prompt : I would like you to use OpenAI whisper model and perfrom trsanscripion of an audio file. The audio file is stored in the Databutton's storage. The file can be accessed via an unique key which would be the input.
+
+The output needs to be the transcription as a text performed by the OpenAI model.
+
+
+
+# v  ⚙️ Integrating the "Store Uploaded Files" API
+
+✍🏼 Prompt :
+Can you integrate #store_audio_file API . 
+This api get's triggered when the Upload button is pressed.
+
+    # ?----------------------------------
+    The API endpoint is as follows:
+
+    @router.post('/upload-audio', response_model=UploadAudioResponse)
+    def upload_audio(file: UploadFile = File(...)) -> UploadAudioResponse:
+        # Generate a unique key for the file with .mp4 extension
+        file_key = f"{uuid.uuid4()}.mp3
+        
+    # ?-----------------------------------
+
+
+
+# v Adding a new button and integrating the process and translate API
+
+✍🏼 Prompt :
+Can you also add a button called Translate ..
+
+This Translate button will trigger #process_audio_file API
+
+
+
+# v Import the AudioFileUploader UI Component to Home Page of the App
+
+✍🏼 Prompt :
+Import the AudioFileUploader UI Component to Home Page of the App

@@ -78,7 +78,7 @@ export default function AudioTranscribePlayground() {
                 ].map((capability) => (
                   <div key={capability} className="flex items-center justify-between">
                     <Label htmlFor={capability} className="text-sm text-gray-200">{capability}</Label>
-                    <Switch id={capability} className="bg-input-background" />
+                    <Switch id={capability} className="bg-input-background data-[state=checked]:bg-highlight" />
                   </div>
                 ))}
               </div>

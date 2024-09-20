@@ -87,7 +87,7 @@ export default function AudioTranscribePlayground() {
                     <input
                       type="text"
                       id="streaming-url"
-                      className="w-full mt-2 bg-input-background border border-purple-600 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white transition-all duration-300"
+                      className="w-full mt-2 bg-transparent border border-purple-600 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white transition-all duration-300"
                       placeholder="https://example.com/stream"
                     />
                   </div>

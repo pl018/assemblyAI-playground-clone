@@ -129,7 +129,7 @@ export default function AudioTranscribePlayground() {
 
         <Card className="flex-grow bg-card-background">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold text-highlight">Try AssemblyAI&apos;s API in seconds</CardTitle>
+            <CardTitle className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text">Try AssemblyAI&apos;s API in seconds</CardTitle>
             <p className="text-gray-300">
               Access production-ready Speech AI models for speech recognition, speaker detection, audio summarization, and more. Test our API yourself with a pre-loaded audio file, or upload your own.
             </p>

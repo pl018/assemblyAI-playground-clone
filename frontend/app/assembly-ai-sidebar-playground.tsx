@@ -15,9 +15,9 @@ export default function AudioTranscribePlayground() {
           <span className="text-gray-300">Playground</span>
         </div>
         <div className="space-x-4">
-          <Button variant="ghost" className="text-gray-200 hover:text-highlight">API Docs</Button>
-          <Button variant="ghost" className="text-gray-200 hover:text-highlight">Contact sales</Button>
-          <Button variant="default" className="bg-highlight text-white hover:bg-opacity-80">Go to your dashboard</Button>
+          <Button variant="ghost" className="text-gray-200 hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white">API Docs</Button>
+          <Button variant="ghost" className="text-gray-200 hover:bg-gradient-to-r from-pink-500 to-purple-600 hover:text-white">Contact sales</Button>
+          <Button variant="default" className="bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:opacity-80">Go to your dashboard</Button>
         </div>
       </div>
 
@@ -74,12 +74,12 @@ export default function AudioTranscribePlayground() {
                 ].map((capability) => (
                   <div key={capability} className="flex items-center justify-between">
                     <Label htmlFor={capability} className="text-sm text-gray-300">{capability}</Label>
-                    <Switch id={capability} className="bg-input-background data-[state=checked]:bg-highlight" />
+                    <Switch id={capability} className="bg-input-background data-[state=checked]:bg-gradient-to-r from-pink-500 to-purple-600" />
                   </div>
                 ))}
               </div>
 
-              <Button className="w-full bg-highlight text-white hover:bg-opacity-80">Transcribe file</Button>
+              <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:opacity-80">Transcribe file</Button>
             </div>
           </CardContent>
         </Card>
